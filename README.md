@@ -6,9 +6,9 @@
 |email|string|null: false, unique: true|
 |password|string|null: false|
 ### Association
-has_many :quizs
+has_many :quizzes
 
-## quizsテーブル
+## quizzesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
@@ -16,18 +16,18 @@ has_many :quizs
 |user|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- has_many :reviews, through: :quiz_reviews
-- has_many :quiz_reviews
+- has_many :reviews, through: :quizzes_reviews
+- has_many :quizzes_reviews
 
 ## reviewsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |tag|string|null: false|
 ### Association
-- has_many :quizs, through: :quiz_reviews
-- has_many :quiz-reviews
+- has_many :quizzes, through: :quizzes_reviews
+- has_many :quizzes-reviews
 
-## quiz-reviews-テーブル
+## quizzes-reviews-テーブル
 |Column|Type|Options|
 |------|----|-------|
 |review|references|null: false, foreign_key: true|
