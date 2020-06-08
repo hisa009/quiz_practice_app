@@ -1,24 +1,37 @@
-# README
+# quiz_practice_app DB設計
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|Nickname|string|null: false|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+### Association
+has_many :quizs
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## quizsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|answer|string|null: false|
+|user|references|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- has_many :reviews, through: :quiz_reviews
+- has_many :quiz_reviews
 
-Things you may want to cover:
+## reviewsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|tag|string|null: false|
+### Association
+- has_many :quizs, through: :quiz_reviews
+- has_many :quiz-reviews
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## quiz-reviews-テーブル
+|Column|Type|Options|
+|------|----|-------|
+|review|references|null: false, foreign_key: true|
+|quiz|references|null: false, foreign_key: true|
+### Association
+- belongs_to :quiz
+- belongs_to :review
