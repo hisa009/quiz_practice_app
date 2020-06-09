@@ -1,0 +1,11 @@
+.main
+  .main__question
+    %p 問題：
+    .main__question__text
+      =@quiz.text
+  .main__btn
+    =image_tag 'buzzer.png'
+  .main__form
+    %input.main__form__text{type: "text", placeholder: '全角のひらがな、数字、記号入力してください'}
+    .main__form__btn 
+      %p.main__form__btn__text 解答する
