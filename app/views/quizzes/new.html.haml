@@ -1,0 +1,9 @@
+.new-contents
+  %p.new-contents__title 問題投稿フォーム
+  .new-contents__box
+    =form_with url: quizzes_path, class: 'new-contents__box__form' do |f|
+      .new-contents__box__form__question 問題
+      =f.text_area :text, placeholder: 'test',class: 'new-contents__box__form__text'
+      .new-contents__box__form__answer 答え
+      =f.text_field :answer, placeholder: 'test',class: 'new-contents__box__form__answer-text'
+      =f.submit '投稿', class: 'new-contents__box__form__btn'
