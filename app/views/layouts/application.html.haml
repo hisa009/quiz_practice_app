@@ -18,9 +18,9 @@
           =link_to 'ログアウト', '#', class: 'header__right__log__link'
     .category
       .category__box
-        =link_to '問題を解く', '#' , class: 'category__box__solving'
+        =link_to '問題を解く', root_path, class: 'category__box__solving'
       .category__box
-        =link_to '問題を作成する', '#', class: 'category__box__create'
+        =link_to '問題を作成する', new_quiz_path, class: 'category__box__create'
       .category__box
         =link_to '問題閲覧・編集', '#', class: 'category__box__edit'
     = yield
