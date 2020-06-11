@@ -20,6 +20,6 @@ class QuizzesController < ApplicationController
 
 private
   def params_quiz
-    params.permit(:text, :answer)
+    params.permit(:text, :answer).merge(user_id: current_user.id)
   end
 end
