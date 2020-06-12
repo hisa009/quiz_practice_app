@@ -1,7 +1,7 @@
 .new-contents
   %p.new-contents__title 問題投稿フォーム
   .new-contents__box
-    =form_with url: quizzes_path, local: true, class: 'new-contents__box__form' do |f|
+    =form_with model: @quiz, local: true, class: 'new-contents__box__form' do |f|
       .new-contents__box__form__question 問題
       =f.text_area :text, placeholder: '６０字以内で記述してください', value: '',class: 'new-contents__box__form__text'
       .new-contents__box__form__answer 答え(解答は全角のひらがな・数字・伸ばし棒(ー)での入力のみ対応しています)
