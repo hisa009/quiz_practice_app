@@ -15,10 +15,16 @@
       .header__title
         %h1 quizapp
       .header__right
-        .header__right__user
-          =link_to 'username', '#', class: 'header__right__user__link'
-        .header__right__log
-          =link_to 'ログアウト', '#', class: 'header__right__log__link'
+        -if user_signed_in?
+          .header__right__user
+            =link_to current_user.nickname, edit_user_registration_path, class: 'header__right__user__link'
+          .header__right__log
+            =link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'header__right__log__link'
+        -else
+          .header__right__user
+            =link_to '新規登録', new_user_registration_path, class: 'header__right__user__link'
+          .header__right__log
+            =link_to 'ログイン', new_user_session_path, class: 'header__right__log__link'
     .category
       .category__box
         =link_to '問題を解く', root_path, class: 'category__box__solving'
