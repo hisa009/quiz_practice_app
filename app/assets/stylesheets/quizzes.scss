@@ -56,10 +56,9 @@ body {
 }
 
 .new-contents {
-  width: 50%;
+  width: 620px;
   height: 600px;
   margin: 0 auto;
-  background-color: yellow;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -83,22 +82,18 @@ body {
       &__answer {
         margin-top: 10px;
         font-size: 30px;
-        position: relative;
       }
       &__answer-text {
         padding-left: 10px;
         height: 40px;
         width: 610px;
-
         font-size: 30px;
       }
       &__btn {
-        position: absolute;
-        bottom: 50px;
-        right: 47%;
         width: 100px;
         height: 40px;
         font-size: 20px;
+        margin: 30px 0 0 250px;
       }
     }
   }
