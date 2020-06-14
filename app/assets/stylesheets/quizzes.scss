@@ -20,7 +20,10 @@ body {
     padding: 5px 5px 5px 5px;
     background-color: white;
     &__text {
-      word-break: break-word;
+      opacity: 0;
+      & span {
+        opacity: 0;
+      }
     }
   }
   &__btn {
