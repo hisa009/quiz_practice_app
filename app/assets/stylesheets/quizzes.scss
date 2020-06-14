@@ -98,3 +98,47 @@ body {
     }
   }
 }
+
+.content {
+  width: 435px;
+  height: 120px;
+  border: 1px solid gray;
+  position: relative;
+  margin: 20px auto 0;
+  &__text {
+    font-size: 20px;
+    padding:5px 25px 5px 5px;
+  }
+  &__right {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    color: red;
+    font-size: 30px;
+    width: 55px;
+    &:hover ul.content__right__box {
+      display: block;
+    }
+    &__icon {
+      float: right;
+    }
+    &__box {
+      position: absolute;
+      right: 5px;
+      top: 20px;
+      border: 1px solid lightblue;
+      border-radius: 4px;
+      width: 50px;
+      height: 60px;
+      text-align: center;
+      text-decoration: none;
+      line-height: 25px;
+      display: none;
+      &__text {
+        text-decoration: none;
+        color: blue;
+        font-size: 16px;
+      }
+    }
+  }
+}
