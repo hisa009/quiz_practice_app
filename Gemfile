@@ -65,3 +65,4 @@ gem 'haml-rails'
 gem 'pg'
 gem 'pry-rails'
 gem 'devise'
+gem "font-awesome-sass"

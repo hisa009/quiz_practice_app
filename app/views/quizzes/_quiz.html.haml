@@ -1,0 +1,8 @@
+.content
+  %p 問題：
+  .content__text=quiz.text
+  .content__right
+    =icon 'fa', 'angle-down', class: 'content__right__icon'
+    %ul.content__right__box
+      %li=link_to '編集', edit_quiz_path(quiz), class: 'content__right__box__text'
+      %li=link_to '削除', quiz_path(quiz), method: :delete, class: 'content__right__box__text'

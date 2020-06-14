@@ -29,7 +29,14 @@
       .category__box
         =link_to '問題を解く', root_path, class: 'category__box__solving'
       .category__box
-        =link_to '問題を作成する', new_quiz_path, class: 'category__box__create'
+        -if user_signed_in?
+          =link_to '問題を作成する', new_quiz_path, class: 'category__box__create'
+        -else
+          =link_to '問題閲覧・編集', new_user_session_path, class: 'category__box__edit'
       .category__box
-        =link_to '問題閲覧・編集', '#', class: 'category__box__edit'
+        -if user_signed_in?
+          =link_to '問題閲覧・編集', user_path(current_user.id), class: 'category__box__edit'
+        -else
+          =link_to '問題閲覧・編集', new_user_session_path, class: 'category__box__edit'
+          
     = yield
