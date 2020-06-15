@@ -3,4 +3,5 @@ class Quiz < ApplicationRecord
   validates :answer, presence: true, format: { with: /\A[ぁ-ん０-９ー－]+\z/ }
 
   belongs_to :user
+  has_many :correctnesses
 end
