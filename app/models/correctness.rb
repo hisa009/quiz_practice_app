@@ -1,0 +1,2 @@
+class Correctness < ApplicationRecord
+end
