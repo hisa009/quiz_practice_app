@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_11_101632) do
+ActiveRecord::Schema.define(version: 2020_06_15_052658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "correctnesses", force: :cascade do |t|
+    t.boolean "answer_flg", default: false, null: false
+    t.bigint "quiz_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quiz_id"], name: "index_correctnesses_on_quiz_id"
+  end
 
   create_table "quizzes", force: :cascade do |t|
     t.text "text", null: false
@@ -37,5 +45,6 @@ ActiveRecord::Schema.define(version: 2020_06_11_101632) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "correctnesses", "quizzes"
   add_foreign_key "quizzes", "users"
 end
