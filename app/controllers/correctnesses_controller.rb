@@ -1,0 +1,2 @@
+class CorrectnessesController < ApplicationController
+end
