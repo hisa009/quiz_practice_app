@@ -44,5 +44,5 @@ $(function() {
   
   $('.main__form__btn').click(function() {
     $('.main').append(div)
-  })
+  });
 });

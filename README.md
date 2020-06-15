@@ -18,6 +18,7 @@ has_many :quizzes
 - belongs_to :user
 - has_many :reviews, through: :quizzes_reviews
 - has_many :quizzes_reviews
+- has_many :correctnesses
 
 ## reviewsテーブル
 |Column|Type|Options|
@@ -27,7 +28,7 @@ has_many :quizzes
 - has_many :quizzes, through: :quizzes_reviews
 - has_many :quizzes-reviews
 
-## quizzes-reviews-テーブル
+## quizzes-reviewsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |review|references|null: false, foreign_key: true|
@@ -35,3 +36,11 @@ has_many :quizzes
 ### Association
 - belongs_to :quiz
 - belongs_to :review
+
+## correctnessesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|answer_flg|boolean|null: false, default: false|
+|quiz|references|null: false, foreign_key: true|
+### Association
+- belongs_to :quiz

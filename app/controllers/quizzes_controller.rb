@@ -5,6 +5,8 @@ class QuizzesController < ApplicationController
     @quizzes = Quiz.all
     @quiz = @quizzes.sample
     gon.answer = @quiz.answer
+    correctnesses = @quiz.correctnesses
+    @rate = rate(correctnesses)
   end
 
   def new
@@ -23,6 +25,8 @@ class QuizzesController < ApplicationController
   end
 
   def edit
+    correctnesses = @quiz.correctnesses
+    @rate = rate(correctnesses)
   end
 
   def update
@@ -51,6 +55,19 @@ private
     if @quiz.user_id != current_user.id
        flash[:notice] = '権限がありません'
        redirect_to root_path
+    end
+  end
+
+  def rate(correctnesses)
+    if correctnesses.length == 0
+      return 0
+    else
+      quantity = correctnesses.length
+      correct_count = 0
+      correctnesses.each do |correctness|
+        correct_count += 1 if correctness.answer_flg == true
+      end
+      return correct_count * 100 / quantity
     end
   end
 end
