@@ -2,8 +2,8 @@ class QuizzesController < ApplicationController
   before_action :ensure_correct_user, only: [:destroy, :edit, :update]
 
   def index
-    @quizzes = Quiz.all
-    @quiz = @quizzes.sample
+    quizzes = Quiz.all
+    @quiz = quizzes.sample
     gon.answer = @quiz.answer
     correctnesses = @quiz.correctnesses
     @rate = rate(correctnesses)
@@ -14,8 +14,8 @@ class QuizzesController < ApplicationController
   end
 
   def create
-    quiz = Quiz.new(quiz_params)
-    if quiz.save
+    @quiz = Quiz.new(quiz_params)
+    if @quiz.save
       redirect_to root_path
       flash[:notice] = '投稿が完了しました'
     else
