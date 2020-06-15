@@ -9,7 +9,6 @@
       ←分かったら
       %br
       &nbsp;&nbsp;&nbsp;押してね
-  .main__form
-    %input.main__form__text{type: "text", placeholder: '全角のひらがな、数字、記号入力してください'}
-    .main__form__btn 
-      %p.main__form__btn__text 解答する
+  =form_with model: @correctness, url: quiz_correctnesses_path(@quiz),local: true, class: 'main__form' do |f|
+    =f.text_field :text, placeholder: '全角のひらがな、数字、記号入力してください', class: 'main__form__text'
+    =f.submit '解答する', class: 'main__form__btn'
