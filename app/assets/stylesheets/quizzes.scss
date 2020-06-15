@@ -11,6 +11,34 @@ body {
   display:flex;
   flex-direction: column;
   align-items: center;
+  &__answer {
+    position: absolute;
+    background-color: white;
+    width: 800px;
+    height: 600px;
+    border: 2px solid;
+    border-radius: 8px 8px 8px 8px;
+    &__text {
+      font-size: 90px;
+      color: red;
+      text-align: center;
+      margin: 160px 0 80px;
+    }
+    &__text2 {
+      font-size: 90px;
+      color: blue;
+      text-align: center;
+      margin: 160px 0 80px;
+    }
+    &__link {
+      display: flex;
+      justify-content: space-evenly;
+      &__next {
+        font-size: 40px;
+        text-decoration: none;
+      }
+    }
+  }
   &__question {
     width: 80%;
     height: 350px;
