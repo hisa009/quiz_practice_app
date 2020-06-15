@@ -1,6 +1,6 @@
 .main
   .main__question
-    %p 問題：
+    %p="問題(正答率：#{@rate}%)"
     .main__question__text
       =@quiz.text
   .main__btn
