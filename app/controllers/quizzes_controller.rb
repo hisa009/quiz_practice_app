@@ -4,6 +4,7 @@ class QuizzesController < ApplicationController
   def index
     @quizzes = Quiz.all
     @quiz = @quizzes.sample
+    gon.answer = @quiz.answer
   end
 
   def new
