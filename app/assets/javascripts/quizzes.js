@@ -1,6 +1,6 @@
 $(function() {
   var div = function correctAnswer(){
-    let answer = $('.main__form__text').val()
+    var answer = $('.main__form__text').val()
     if ( answer == gon.answer ) {
       var html = `<div class="main__answer">
                     <div class="main__answer__text">正解</div>
